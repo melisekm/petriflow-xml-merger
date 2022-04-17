@@ -9,19 +9,17 @@ ids of elements. Order is based on alphabetical order of the XML names.
 
 1. Install required packages: ```pip install xmltodict```
 2. Create your nets in the top left corner ```https://next.builder.netgrif.com/modeler```
-3. Export XML files
-5. Move XML file to the ```src``` folder.
-6. Run ```python main.py --folder= --count=X``` where count is number of files to merge
-7. Import generated XML file to the website
+3. Export XML files to the ```src``` folder
+4. Run ```python main.py ```
+5. Import generated XML file to the builder website
 
-### Parameters
+## Parameters
 
-- ```folder``` - merge files in folder
-- ```count``` - number of files to merge
+- ```folder``` - merge files in folder, default current folder
+- ```count``` - number of files to merge, default all
 - ```xmls``` - paths to xml files if not merging all
-- ```how``` - how to merge if mering only two - [vertically, horizontally]
-- ```output``` - path to output file
-- ```help``` - show help
+- ```how``` - how to merge if merging only two - [vertically, horizontally]
+- ```output``` - path to the output file
 
 ## Positions
 
@@ -41,4 +39,4 @@ are predefined.
 +-----+-------+-------+
 ```
 
-Be careful when merging vertically as the board only supports up to 5000px vertically.
+Be careful when merging vertically as the board only supports up to 5000px.
