@@ -5,7 +5,7 @@
     <title>PETRIFLOW XML MERGER</title>
     <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.12/lib/swappable.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <style type="text/css">
         * {
@@ -27,56 +27,56 @@
 </head>
 
 <body>
-    {% with messages = get_flashed_messages() %}
+{% with messages = get_flashed_messages() %}
     {% if messages %}
-    {% for message in messages %}
-    <p>{{ message }}</p>
-    {% endfor %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
     {% endif %}
-    {% endwith %}
-    <h1>Upload new XML Petri nets</h1>
+{% endwith %}
+<h1>Upload new XML Petri nets</h1>
 
-    <form id="formFiles" method="POST" enctype="multipart/form-data" action="process_form">
-        <label for="formFileMultiple">Choose files</label>
+<form id="formFiles" method="POST" enctype="multipart/form-data" action="process_form">
+    <label for="formFileMultiple">Choose files</label>
+    <div>
+        <input type="file" name="file[]" multiple/>
+    </div>
+
+    <p>
+        Drag and drop the positions on the table. Enter edit mode and click on numbers to change the text.
+    </p>
+    <p>
+        Enter -1 if there should be a space.
+    </p>
+    <div>
+        <label for="rows">Rows:</label>
+        <input id="rows" type="number" value="2">
+        <label for="cols">Cols:</label>
+        <input type="number" value="2" id="cols">
         <div>
-            <input type="file" name="file[]" multiple />
+            <button id="createTable">Create Table</button>
         </div>
+    </div>
+    <div>
+        <button id="edit">EDIT MODE</button>
+        <button id="swap">SWAP MODE</button>
+    </div>
 
-        <p>
-            Drag and drop the positions on the table. Enter edit mode and click on numbers to change the text.
-        </p>
-        <p>
-            Enter -1 if there should be a space.
-        </p>
-        <div>
-            <label for="rows">Rows:</label>
-            <input id="rows" type="number" value="2">
-            <label for="cols">Cols:</label>
-            <input type="number" value="2" id="cols">
-            <div>
-                <button id="createTable">Create Table</button>
-            </div>
-        </div>
-        <div>
-            <button id="edit">EDIT MODE</button>
-            <button id="swap">SWAP MODE</button>
-        </div>
+    <table class="grabbable-parent grabbable">
+        <tbody>
+        <tr>
+            <td class="item">1</td>
+            <td class="item">2</td>
+        </tr>
+        <tr>
+            <td class="item">3</td>
+            <td class="item">4</td>
+        </tr>
 
-        <table class="grabbable-parent grabbable">
-            <tbody>
-                <tr>
-                    <td class="item">1</td>
-                    <td class="item">2</td>
-                </tr>
-                <tr>
-                    <td class="item">3</td>
-                    <td class="item">4</td>
-                </tr>
-
-            </tbody>
-        </table>
-        <input type=submit value=MERGE id="mergeBtn">
-    </form>
+        </tbody>
+    </table>
+    <input type=submit value=MERGE id="mergeBtn">
+</form>
 </body>
 <script>
     let swappable = new Swappable.default(document.querySelectorAll('table'), {
@@ -85,26 +85,30 @@
 
     function updateSelf(event) {
         // get event target element
+        event.preventDefault()
         let target = event.target;
-        let prompt = window.prompt('Enter new value');
         // update innerHTml
-        target.innerHTML = prompt;
+        target.innerHTML = window.prompt('Enter new value');
     }
 
-    $('#edit').click(function () {
+    $('#edit').click(function (event) {
+        event.preventDefault();
         swappable.destroy();
         // add eventlistener to all items
         $('.item').click(updateSelf);
 
     })
-    $('#swap').click(function () {
+    $('#swap').click(function (event) {
+        event.preventDefault()
         swappable = new Swappable.default(document.querySelectorAll('table'), {
             draggable: 'td'
         });
     })
 
 
-    $('#createTable').click(function () {
+    $('#createTable').click(function (event) {
+        event.preventDefault();
+
         // first remove old table
         $('table').remove();
         // read id cols and id rows
@@ -129,7 +133,6 @@
     });
 
 
-
     $('#formFiles')
         .submit(function (e) {
             const formdata = new FormData(this);
@@ -151,7 +154,7 @@
                 data: formdata,
                 processData: false,
                 contentType: false,
-                success: function (data, status) {
+                success: function (data) {
                     //JSON parse error, this is not json (or JSON isn't in your browser)
                     var blob = new Blob([data]);
                     var link = document.createElement('a');
