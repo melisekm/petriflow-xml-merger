@@ -29,9 +29,9 @@ class PetriNet:
         self.net_raw_xml = xmltodict.unparse(self.model_dict, pretty=True)
 
         # increment ids so they are ready to be written to next net
-        self.max_ids['t'] += 1 # transitions
-        self.max_ids['a'] += 1 # arcs
-        self.max_ids['p'] += 1 # places
+        self.max_ids['t'] += 1  # transitions
+        self.max_ids['a'] += 1  # arcs
+        self.max_ids['p'] += 1  # places
 
     # iterate over nested dictionaries    
     def parse_keys(self, model_dict, rename, max_ids):
