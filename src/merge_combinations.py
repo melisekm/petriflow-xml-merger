@@ -85,7 +85,7 @@ def merge_xmls(folder=None, files=None, count=None, output="merged.xml", how="ho
         f.write(res)
 
 
-def merge_from_file(file=None, pos_list=None, folder="random", output="merged.xml", write_result=True):
+def merge_from_file(file=None, pos_list=None, folder="random", xml_files=None, output="merged.xml", write_result=True):
     if file:
         positions = pd.read_fwf(file, header=None, astype=int).fillna(-1).astype(int)
     elif pos_list:
@@ -95,14 +95,17 @@ def merge_from_file(file=None, pos_list=None, folder="random", output="merged.xm
 
     if len(positions) == 0:
         raise Exception("No positions given.")
-    xmls = read_xmls(folder=folder)
+    if xml_files is None:
+        xmls = read_xmls(folder=folder)
+    else:
+        xmls = xml_files
     try:
         for i in range(positions.shape[1]):
             for j in range(positions.shape[0]):
                 if positions.iloc[j, i] != -1:
                     positions.iloc[j, i] = xmls[positions.iloc[j, i] - 1]
     except IndexError:
-        raise Exception("Invalid positions given. Check input folder and positions file.")
+        raise Exception("Invalid positions given. Check input files and positions.")
     row_pos = 0
     while positions.shape[0] != 1:
         xml1, xml2 = positions[row_pos][0], positions[row_pos][1]
