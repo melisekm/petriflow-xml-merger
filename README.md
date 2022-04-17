@@ -17,6 +17,7 @@ ids of elements. Order is based on alphabetical order of the XML names.
 
 - ```folder``` - merge files in folder, default current folder
 - ```count``` - number of files to merge, default all
+- ```positions``` - read numerical positions from file - vertical space gets trunctated
 - ```xmls``` - paths to xml files if not merging all
 - ```how``` - how to merge if merging only two - [vertically, horizontally]
 - ```output``` - path to the output file
@@ -38,5 +39,8 @@ are predefined.
 | 4 3 |   5 4 | 6 5 4 |
 +-----+-------+-------+
 ```
+
+- if using positions file, first pairs in the columns gets merged vertically,
+then if only one row remains, it gets merged horizontally
 
 Be careful when merging vertically as the board only supports up to 5000px.

@@ -85,10 +85,13 @@ def merge_from_file(file, folder="random", output="merged.xml"):
     if len(positions) == 0:
         raise Exception("No positions given.")
     xmls = read_xmls(folder=folder)
-    for i in range(positions.shape[1]):
-        for j in range(positions.shape[0]):
-            if positions.iloc[j, i] != -1:
-                positions.iloc[j, i] = xmls[positions.iloc[j, i] - 1]
+    try:
+        for i in range(positions.shape[1]):
+            for j in range(positions.shape[0]):
+                if positions.iloc[j, i] != -1:
+                    positions.iloc[j, i] = xmls[positions.iloc[j, i] - 1]
+    except IndexError:
+        raise Exception("Invalid positions given. Check input folder and positions file.")
     row_pos = 0
     while positions.shape[0] != 1:
         xml1, xml2 = positions[row_pos][0], positions[row_pos][1]
