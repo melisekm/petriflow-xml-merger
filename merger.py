@@ -4,9 +4,27 @@ from PetriNet import PetriNet
 
 
 def merge_elements(old_net, new_net):
-    old_net.model_dict['document']['transition'] += new_net.model_dict['document']['transition']
-    old_net.model_dict['document']['place'] += new_net.model_dict['document']['place']
-    old_net.model_dict['document']['arc'] += new_net.model_dict['document']['arc']
+    try:
+        if not isinstance(old_net.model_dict['document']['transition'], list):
+            old_net.model_dict['document']['transition'] = [old_net.model_dict['document']['transition']]
+        if not isinstance(new_net.model_dict['document']['transition'], list):
+            new_net.model_dict['document']['transition'] = [new_net.model_dict['document']['transition']]
+
+        if not isinstance(old_net.model_dict['document']['place'], list):
+            old_net.model_dict['document']['place'] = [old_net.model_dict['document']['place']]
+        if not isinstance(new_net.model_dict['document']['place'], list):
+            new_net.model_dict['document']['place'] = [new_net.model_dict['document']['place']]
+
+        if not isinstance(old_net.model_dict['document']['arc'], list):
+            old_net.model_dict['document']['arc'] = [old_net.model_dict['document']['arc']]
+        if not isinstance(new_net.model_dict['document']['arc'], list):
+            new_net.model_dict['document']['arc'] = [new_net.model_dict['document']['arc']]
+
+        old_net.model_dict['document']['transition'] += new_net.model_dict['document']['transition']
+        old_net.model_dict['document']['place'] += new_net.model_dict['document']['place']
+        old_net.model_dict['document']['arc'] += new_net.model_dict['document']['arc']
+    except KeyError:
+        raise Exception('Petri net does not have transitions, places or arcs. Cannot merge.')
 
 
 def merge_petri_nets(xml1, xml2, how='horizontally'):
