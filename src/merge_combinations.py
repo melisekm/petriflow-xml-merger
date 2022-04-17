@@ -42,13 +42,17 @@ def merge_6_xmls(xmls):
     return merge_2_xmls([first_sixth_second_fifth, third_fourth], "horizontally")
 
 
-def merge_xmls(folder=None, files=None, count=2, output="merged.xml", how="horizontally"):
+def merge_xmls(folder=None, files=None, count=None, output="merged.xml", how="horizontally"):
     if not folder and not files:
         raise Exception("No files or folder given.")
     if folder:
-        files = glob.glob(f"{folder}/*.xml")[:count]
+        files = glob.glob(f"{folder}/*.xml")
+    if count is None:
+        count = len(files)
 
-    xmls = read_files(*files)
+    xmls = read_files(*files[:count])
+    if len(xmls) < 2:
+        raise Exception("Can only merge 2 or more xmls.")
     if len(xmls) <= 3:
         res = merge_3_or_less_xmls(xmls, how)
     elif len(xmls) == 4:
@@ -58,7 +62,7 @@ def merge_xmls(folder=None, files=None, count=2, output="merged.xml", how="horiz
     elif len(xmls) == 6:
         res = merge_6_xmls(xmls)
     else:
-        raise Exception("Invalid number of xmls.")
+        raise Exception("Invalid number of xmls. 6 is currently maximum.")
 
     with open(output, "w", encoding='utf-8') as f:
         f.write(res)
