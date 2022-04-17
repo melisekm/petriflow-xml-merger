@@ -1,4 +1,5 @@
 # Merge Petriflow XML files
+showcase https://petriflow-xml-merger.herokuapp.com/
 
 ## Description
 
@@ -9,11 +10,15 @@ ids of elements. Order is based on alphabetical order of the XML names.
 
 1. Install required packages: ```pip install -r requirements.txt```
 2. Create your nets in the top left corner ```https://next.builder.netgrif.com/modeler```
-3. Export XML files to the ```src``` folder
-4. Run ```python main.py ```
-5. Import generated XML file to the builder website
+3. Export XML files 
+4. Run ```python app.py ```
+5. Import XML files. Drag and drop them in positions.
+6. Press merge.
+7. Import generated XML file to the builder website
 
-## Parameters
+
+
+## Parameters for cmd app
 
 - ```folder``` - merge files in folder, default current folder
 - ```count``` - number of files to merge, default all
