@@ -7,7 +7,7 @@ ids of elements. Order is based on alphabetical order of the XML names.
 
 ## Usage
 
-1. Install required packages: ```pip install xmltodict```
+1. Install required packages: ```pip install -r requirements.txt```
 2. Create your nets in the top left corner ```https://next.builder.netgrif.com/modeler```
 3. Export XML files to the ```src``` folder
 4. Run ```python main.py ```
