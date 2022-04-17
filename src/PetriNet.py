@@ -12,7 +12,7 @@ ALLOWED_ELEMENT_KEYS = ('id', 'destinationId', 'sourceId', 'reference')
 
 
 class PetriNet:
-    def __init__(self, xml_filename=None, increment_x=0, increment_y=0):
+    def __init__(self, xml=None, increment_x=0, increment_y=0):
         self.bounding_box = {'x_min': _min, 'x_max': _max, 'y_min': _min, 'y_max': _max}
         self.elements = {'t': set(), 'p': set(), 'a': set()}
         self.max_ids = {'t': _max, 'p': _max, 'a': _max}
@@ -20,9 +20,8 @@ class PetriNet:
             'x': increment_x,
             'y': increment_y
         }
-        with open(xml_filename, 'r', encoding='utf-8') as xml:
-            self.net_raw_xml = xml.read()
-            self.model_dict = xmltodict.parse(self.net_raw_xml)
+        self.net_raw_xml = xml
+        self.model_dict = xmltodict.parse(self.net_raw_xml)
 
     def parse(self, rename=False, max_ids=None):
         if rename and not max_ids:

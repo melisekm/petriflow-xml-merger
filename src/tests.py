@@ -1,10 +1,10 @@
-from merger import merge
+from merge_combinations import read_files
+from merger import merge_petri_nets
 
 
 def test_merge(path1, path2, test_path, how="horizontally"):
-    with open(test_path, 'r', encoding='utf-8') as f:
-        test_xml = f.read()
-    res = merge(path1, path2, how)
+    xml1, xml2, test_xml = read_files(path1, path2, test_path)
+    res = merge_petri_nets(xml1, xml2, how)
 
     assert res == test_xml
 

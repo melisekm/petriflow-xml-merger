@@ -1,356 +1,182 @@
 <document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://netgrif.github.io/petriflow/petriflow.schema.xsd">
 	<id>new_model</id>
+	<version>1.0.0</version>
 	<initials>NEW</initials>
 	<title>New Model</title>
-	<icon>device_hub</icon>
+	<icon>home</icon>
 	<defaultRole>true</defaultRole>
 	<anonymousRole>true</anonymousRole>
 	<transitionRole>false</transitionRole>
 	<transition>
 		<id>t1</id>
-		<x>220</x>
-		<y>220</y>
-		<label>Nalož objednávky</label>
+		<x>380</x>
+		<y>60</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t2</id>
-		<x>220</x>
-		<y>300</y>
-		<label>Vylož objednávky</label>
+		<x>300</x>
+		<y>140</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t3</id>
-		<x>740</x>
-		<y>260</y>
-		<label>Začni roznášku</label>
+		<x>220</x>
+		<y>300</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t4</id>
-		<x>980</x>
-		<y>260</y>
-		<label>Zadaj ulicu</label>
+		<x>220</x>
+		<y>500</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t5</id>
-		<x>1220</x>
-		<y>260</y>
-		<label>Zadaj číslo domu</label>
+		<x>380</x>
+		<y>580</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t6</id>
-		<x>1460</x>
-		<y>260</y>
-		<label>Zadaj mesto</label>
+		<x>500</x>
+		<y>500</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t7</id>
-		<x>1700</x>
-		<y>260</y>
-		<label>Zadaj PSČ</label>
+		<x>540</x>
+		<y>340</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t8</id>
-		<x>1700</x>
-		<y>500</y>
-		<label>Doruč objednávku na adresu</label>
+		<x>380</x>
+		<y>300</y>
+		<label/>
 	</transition>
 	<transition>
 		<id>t9</id>
-		<x>1700</x>
-		<y>740</y>
-		<label>Zavolaj zákazníkovi</label>
-	</transition>
-	<transition>
-		<id>t10</id>
-		<x>1460</x>
-		<y>780</y>
-		<label>Zákazník zdvihne telefón</label>
-	</transition>
-	<transition>
-		<id>t11</id>
-		<x>1460</x>
-		<y>900</y>
-		<label>Zákazník nezdvihne telefón</label>
-	</transition>
-	<transition>
-		<id>t12</id>
-		<x>1300</x>
-		<y>700</y>
-		<label>Odovzdaj objednávku</label>
-	</transition>
-	<transition>
-		<id>t13</id>
-		<x>980</x>
-		<y>660</y>
-		<label>Zákazník prijme objednávku</label>
-	</transition>
-	<transition>
-		<id>t14</id>
-		<x>620</x>
-		<y>620</y>
-		<label>Pokračuj v rozvoze</label>
-	</transition>
-	<transition>
-		<id>t15</id>
-		<x>620</x>
-		<y>860</y>
-		<label>Vráť sa do reštaurácie</label>
-	</transition>
-	<transition>
-		<id>t16</id>
-		<x>1300</x>
-		<y>860</y>
-		<label>Ukonči odovzdávanie</label>
-	</transition>
-	<transition>
-		<id>t17</id>
-		<x>980</x>
-		<y>780</y>
-		<label>Ukonči kontrolu</label>
-	</transition>
-	<transition>
-		<id>t19</id>
-		<x>980</x>
-		<y>900</y>
-		<label>Zákazník odmietne objednávku</label>
-	</transition>
-	<transition>
-		<id>t20</id>
-		<x>220</x>
-		<y>620</y>
-		<label>Odovzdaj odmietnuté objednávky</label>
-	</transition>
-	<transition>
-		<id>t21</id>
-		<x>420</x>
-		<y>620</y>
-		<label>Dolož objednávky</label>
-	</transition>
-	<transition>
-		<id>t22</id>
-		<x>1700</x>
-		<y>1060</y>
-		<label>Opusti adresu</label>
+		<x>260</x>
+		<y>340</y>
+		<label/>
 	</transition>
 	<place>
+		<id>p1</id>
+		<x>460</x>
+		<y>60</y>
+		<tokens>1</tokens>
+		<static>false</static>
+	</place>
+	<place>
 		<id>p2</id>
-		<x>60</x>
-		<y>220</y>
-		<label>Objednávka</label>
-		<tokens>4</tokens>
+		<x>340</x>
+		<y>60</y>
+		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<place>
 		<id>p3</id>
-		<x>620</x>
-		<y>260</y>
-		<label>Naložené objednávky</label>
+		<x>220</x>
+		<y>220</y>
 		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<place>
 		<id>p4</id>
-		<x>420</x>
-		<y>180</y>
-		<label>Voľné miesto v aute</label>
-		<tokens>3</tokens>
+		<x>220</x>
+		<y>380</y>
+		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<place>
 		<id>p5</id>
-		<x>860</x>
-		<y>260</y>
-		<label>Navigácia je spustená</label>
+		<x>300</x>
+		<y>540</y>
 		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<place>
 		<id>p6</id>
-		<x>1100</x>
-		<y>260</y>
-		<label>Ulica je zadaná</label>
+		<x>420</x>
+		<y>580</y>
 		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<place>
 		<id>p7</id>
 		<x>540</x>
-		<y>180</y>
-		<label>Poslíček je v pizzérií</label>
-		<tokens>1</tokens>
+		<y>420</y>
+		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<place>
 		<id>p8</id>
-		<x>1340</x>
-		<y>260</y>
-		<label>Číslo domu je zadané</label>
+		<x>500</x>
+		<y>340</y>
 		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<place>
 		<id>p9</id>
-		<x>1580</x>
-		<y>260</y>
-		<label>Mesto je zadané</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p10</id>
-		<x>1700</x>
-		<y>380</y>
-		<label>PSČ je zadané</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p11</id>
-		<x>1700</x>
-		<y>620</y>
-		<label>Objednávka je na zadanej adrese</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p12</id>
-		<x>1580</x>
-		<y>860</y>
-		<label>Zákazníkov telefón zvoní</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p13</id>
-		<x>1300</x>
-		<y>780</y>
-		<label>Zákazník prišiel k vozidlu</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p14</id>
-		<x>1140</x>
-		<y>780</y>
-		<label>Odovzdané objednávky</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p15</id>
-		<x>780</x>
-		<y>660</y>
-		<label>Peniaze za objednávku</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p16</id>
-		<x>100</x>
-		<y>860</y>
-		<label>Peniaze podniku</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p17</id>
-		<x>620</x>
-		<y>740</y>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p18</id>
-		<x>1140</x>
-		<y>980</y>
-		<label>Zákazník má v rukách objednávky</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p19</id>
-		<x>100</x>
-		<y>740</y>
-		<label>Zlé objednávky</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p20</id>
-		<x>340</x>
-		<y>740</y>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p21</id>
-		<x>780</x>
-		<y>860</y>
-		<label>Odmietnuté objednávky</label>
-		<tokens>0</tokens>
-		<static>false</static>
-	</place>
-	<place>
-		<id>p22</id>
-		<x>1820</x>
-		<y>780</y>
-		<label>Počet pokusov o vytočenie</label>
+		<x>300</x>
+		<y>340</y>
 		<tokens>0</tokens>
 		<static>false</static>
 	</place>
 	<arc>
 		<id>a1</id>
 		<type>regular</type>
-		<sourceId>t1</sourceId>
-		<destinationId>p3</destinationId>
+		<sourceId>p1</sourceId>
+		<destinationId>t1</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a2</id>
 		<type>regular</type>
-		<sourceId>p2</sourceId>
-		<destinationId>t1</destinationId>
+		<sourceId>t1</sourceId>
+		<destinationId>p2</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a3</id>
 		<type>regular</type>
-		<sourceId>p4</sourceId>
-		<destinationId>t1</destinationId>
+		<sourceId>p2</sourceId>
+		<destinationId>t2</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a4</id>
 		<type>regular</type>
-		<sourceId>p3</sourceId>
-		<destinationId>t2</destinationId>
+		<sourceId>t2</sourceId>
+		<destinationId>p3</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a5</id>
 		<type>regular</type>
-		<sourceId>t2</sourceId>
-		<destinationId>p2</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a6</id>
-		<type>regular</type>
-		<sourceId>t2</sourceId>
-		<destinationId>p4</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a7</id>
-		<type>read</type>
 		<sourceId>p3</sourceId>
 		<destinationId>t3</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
-		<id>a8</id>
+		<id>a6</id>
 		<type>regular</type>
 		<sourceId>t3</sourceId>
+		<destinationId>p4</destinationId>
+		<multiplicity>1</multiplicity>
+	</arc>
+	<arc>
+		<id>a7</id>
+		<type>regular</type>
+		<sourceId>p4</sourceId>
+		<destinationId>t4</destinationId>
+		<multiplicity>1</multiplicity>
+	</arc>
+	<arc>
+		<id>a8</id>
+		<type>regular</type>
+		<sourceId>t4</sourceId>
 		<destinationId>p5</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
@@ -358,13 +184,13 @@
 		<id>a9</id>
 		<type>regular</type>
 		<sourceId>p5</sourceId>
-		<destinationId>t4</destinationId>
+		<destinationId>t5</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a10</id>
 		<type>regular</type>
-		<sourceId>t4</sourceId>
+		<sourceId>t5</sourceId>
 		<destinationId>p6</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
@@ -372,452 +198,49 @@
 		<id>a11</id>
 		<type>regular</type>
 		<sourceId>p6</sourceId>
-		<destinationId>t5</destinationId>
+		<destinationId>t6</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a12</id>
-		<type>read</type>
-		<sourceId>p7</sourceId>
-		<destinationId>t1</destinationId>
+		<type>regular</type>
+		<sourceId>t6</sourceId>
+		<destinationId>p7</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a13</id>
-		<type>read</type>
+		<type>regular</type>
 		<sourceId>p7</sourceId>
-		<destinationId>t2</destinationId>
+		<destinationId>t7</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a14</id>
 		<type>regular</type>
-		<sourceId>p7</sourceId>
-		<destinationId>t3</destinationId>
+		<sourceId>t7</sourceId>
+		<destinationId>p8</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a15</id>
 		<type>regular</type>
-		<sourceId>t5</sourceId>
-		<destinationId>p8</destinationId>
+		<sourceId>p8</sourceId>
+		<destinationId>t8</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a16</id>
 		<type>regular</type>
-		<sourceId>p8</sourceId>
-		<destinationId>t6</destinationId>
+		<sourceId>t8</sourceId>
+		<destinationId>p9</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a17</id>
 		<type>regular</type>
-		<sourceId>t6</sourceId>
-		<destinationId>p9</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a18</id>
-		<type>regular</type>
 		<sourceId>p9</sourceId>
-		<destinationId>t7</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a19</id>
-		<type>regular</type>
-		<sourceId>t7</sourceId>
-		<destinationId>p10</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a20</id>
-		<type>regular</type>
-		<sourceId>p10</sourceId>
-		<destinationId>t8</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a21</id>
-		<type>regular</type>
-		<sourceId>t8</sourceId>
-		<destinationId>p11</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a22</id>
-		<type>regular</type>
-		<sourceId>p11</sourceId>
 		<destinationId>t9</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a23</id>
-		<type>regular</type>
-		<sourceId>t9</sourceId>
-		<destinationId>p12</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a24</id>
-		<type>regular</type>
-		<sourceId>p12</sourceId>
-		<destinationId>t10</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a25</id>
-		<type>regular</type>
-		<sourceId>p12</sourceId>
-		<destinationId>t11</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a26</id>
-		<type>regular</type>
-		<sourceId>t10</sourceId>
-		<destinationId>p13</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a28</id>
-		<type>regular</type>
-		<sourceId>t12</sourceId>
-		<destinationId>p14</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a29</id>
-		<type>regular</type>
-		<sourceId>p3</sourceId>
-		<destinationId>t12</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a30</id>
-		<type>read</type>
-		<sourceId>p13</sourceId>
-		<destinationId>t12</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a31</id>
-		<type>regular</type>
-		<sourceId>p14</sourceId>
-		<destinationId>t13</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a32</id>
-		<type>regular</type>
-		<sourceId>t13</sourceId>
-		<destinationId>p15</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a35</id>
-		<type>regular</type>
-		<sourceId>p17</sourceId>
-		<destinationId>t14</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a36</id>
-		<type>regular</type>
-		<sourceId>p17</sourceId>
-		<destinationId>t15</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a37</id>
-		<type>read</type>
-		<sourceId>p18</sourceId>
-		<destinationId>t13</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a38</id>
-		<type>regular</type>
-		<sourceId>t16</sourceId>
-		<destinationId>p18</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a39</id>
-		<type>read</type>
-		<sourceId>p14</sourceId>
-		<destinationId>t16</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a41</id>
-		<type>inhibitor</type>
-		<sourceId>p18</sourceId>
-		<destinationId>t16</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a42</id>
-		<type>inhibitor</type>
-		<sourceId>p18</sourceId>
-		<destinationId>t12</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a43</id>
-		<type>regular</type>
-		<sourceId>t17</sourceId>
-		<destinationId>p17</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a44</id>
-		<type>regular</type>
-		<sourceId>p18</sourceId>
-		<destinationId>t17</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a45</id>
-		<type>inhibitor</type>
-		<sourceId>p14</sourceId>
-		<destinationId>t17</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a46</id>
-		<type>regular</type>
-		<sourceId>t14</sourceId>
-		<destinationId>p5</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a47</id>
-		<type>regular</type>
-		<sourceId>t13</sourceId>
-		<destinationId>p4</destinationId>
-		<multiplicity>1</multiplicity>
-		<breakpoint>
-			<x>860</x>
-			<y>940</y>
-		</breakpoint>
-		<breakpoint>
-			<x>540</x>
-			<y>940</y>
-		</breakpoint>
-	</arc>
-	<arc>
-		<id>a48</id>
-		<type>regular</type>
-		<sourceId>p13</sourceId>
-		<destinationId>t16</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a49</id>
-		<type>read</type>
-		<sourceId>p3</sourceId>
-		<destinationId>t14</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a57</id>
-		<type>regular</type>
-		<sourceId>t15</sourceId>
-		<destinationId>p16</destinationId>
-		<multiplicity>0</multiplicity>
-		<reference>p15</reference>
-	</arc>
-	<arc>
-		<id>a59</id>
-		<type>reset</type>
-		<sourceId>p15</sourceId>
-		<destinationId>t15</destinationId>
-		<multiplicity>1</multiplicity>
-		<breakpoint>
-			<x>740</x>
-			<y>780</y>
-		</breakpoint>
-	</arc>
-	<arc>
-		<id>a60</id>
-		<type>regular</type>
-		<sourceId>p14</sourceId>
-		<destinationId>t19</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a61</id>
-		<type>read</type>
-		<sourceId>p18</sourceId>
-		<destinationId>t19</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a62</id>
-		<type>regular</type>
-		<sourceId>t19</sourceId>
-		<destinationId>p3</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a63</id>
-		<type>regular</type>
-		<sourceId>t15</sourceId>
-		<destinationId>p20</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a64</id>
-		<type>regular</type>
-		<sourceId>p20</sourceId>
-		<destinationId>t20</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a65</id>
-		<type>regular</type>
-		<sourceId>p20</sourceId>
-		<destinationId>t21</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a66</id>
-		<type>regular</type>
-		<sourceId>t21</sourceId>
-		<destinationId>p7</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a67</id>
-		<type>regular</type>
-		<sourceId>t20</sourceId>
-		<destinationId>p7</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a70</id>
-		<type>regular</type>
-		<sourceId>t19</sourceId>
-		<destinationId>p21</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a72</id>
-		<type>reset</type>
-		<sourceId>p21</sourceId>
-		<destinationId>t21</destinationId>
-		<multiplicity>1</multiplicity>
-		<breakpoint>
-			<x>540</x>
-			<y>780</y>
-		</breakpoint>
-	</arc>
-	<arc>
-		<id>a73</id>
-		<type>reset</type>
-		<sourceId>p21</sourceId>
-		<destinationId>t14</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a74</id>
-		<type>regular</type>
-		<sourceId>t20</sourceId>
-		<destinationId>p19</destinationId>
-		<multiplicity>0</multiplicity>
-		<reference>p21</reference>
-	</arc>
-	<arc>
-		<id>a75</id>
-		<type>reset</type>
-		<sourceId>p21</sourceId>
-		<destinationId>t20</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a76</id>
-		<type>regular</type>
-		<sourceId>t20</sourceId>
-		<destinationId>p4</destinationId>
-		<multiplicity>0</multiplicity>
-		<reference>p21</reference>
-	</arc>
-	<arc>
-		<id>a77</id>
-		<type>regular</type>
-		<sourceId>p3</sourceId>
-		<destinationId>t20</destinationId>
-		<multiplicity>0</multiplicity>
-		<reference>p21</reference>
-	</arc>
-	<arc>
-		<id>a78</id>
-		<type>regular</type>
-		<sourceId>t11</sourceId>
-		<destinationId>p11</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a82</id>
-		<type>regular</type>
-		<sourceId>p22</sourceId>
-		<destinationId>t9</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a83</id>
-		<type>regular</type>
-		<sourceId>t8</sourceId>
-		<destinationId>p22</destinationId>
-		<multiplicity>3</multiplicity>
-	</arc>
-	<arc>
-		<id>a84</id>
-		<type>inhibitor</type>
-		<sourceId>p22</sourceId>
-		<destinationId>t22</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a85</id>
-		<type>regular</type>
-		<sourceId>p11</sourceId>
-		<destinationId>t22</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a86</id>
-		<type>regular</type>
-		<sourceId>t22</sourceId>
-		<destinationId>p17</destinationId>
-		<multiplicity>1</multiplicity>
-		<breakpoint>
-			<x>860</x>
-			<y>1060</y>
-		</breakpoint>
-		<breakpoint>
-			<x>740</x>
-			<y>1060</y>
-		</breakpoint>
-		<breakpoint>
-			<x>740</x>
-			<y>1020</y>
-		</breakpoint>
-	</arc>
-	<arc>
-		<id>a87</id>
-		<type>read</type>
-		<sourceId>p21</sourceId>
-		<destinationId>t20</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a88</id>
-		<type>reset</type>
-		<sourceId>p22</sourceId>
-		<destinationId>t10</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 </document>

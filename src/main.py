@@ -1,22 +1,6 @@
 import argparse
-import glob
 
-from merge_combinations import merge_2_files, merge_3_or_less_files
-
-
-def merge_all(folder, how, count):
-    files = glob.glob(f"{folder}/*.xml")[:count]
-    if len(files) <= 3:
-        merge_3_or_less_files(files, output=f"merged.xml", how=how)
-    # elif len(files) == 4:
-    #     merge_4_files(files)
-    # elif len(files) == 5:
-    #     merge_5_files(files)
-    # elif len(files) <= 9:
-    #     merge_more_than_5(files)
-    # else:
-    #     raise Exception('Too many files to merge')
-
+from merge_combinations import merge_xmls
 
 all_help = "Tries to merge all xml files in [folder]. See docs for positioning"
 
@@ -38,9 +22,9 @@ if __name__ == '__main__':
         parser.error('If you want to merge all files, you should specify a folder.')
 
     if args.all and args.folder:
-        merge_all(args.folder, args.how, args.count)
+        merge_xmls(folder=args.folder, how=args.how, count=args.count)
 
     elif args.xml1 and args.xml2:
-        merge_2_files([args.xml1, args.xml2], output=args.output, how=args.how)
+        merge_xmls(files=[args.xml1, args.xml2], output=args.output, how=args.how)
     else:
         parser.error('You should specify xml1 and xml2. or all.')

@@ -9,8 +9,8 @@ def merge_elements(old_net, new_net):
     old_net.model_dict['document']['arc'] += new_net.model_dict['document']['arc']
 
 
-def merge(xml1_path, xml2_path, how='horizontally'):
-    old_net = PetriNet(xml1_path, 0, 0)
+def merge_petri_nets(xml1, xml2, how='horizontally'):
+    old_net = PetriNet(xml1, 0, 0)
     old_net.parse()
     if how == 'horizontally':
         x_max = old_net.bounding_box['x_max']
@@ -22,7 +22,7 @@ def merge(xml1_path, xml2_path, how='horizontally'):
         raise ValueError('Invalid merge direction')
 
     # move and rename elements in new net
-    new_net = PetriNet(xml2_path, x_max, y_max)
+    new_net = PetriNet(xml2, x_max, y_max)
     new_net.parse(rename=True, max_ids=old_net.max_ids)
 
     # merge nets
