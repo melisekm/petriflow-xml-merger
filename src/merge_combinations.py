@@ -9,6 +9,11 @@ def read_files(*files):
     return [open(f, encoding='utf-8').read() for f in files]
 
 
+def write(xml, output="merged.xml"):
+    with open(output, "w", encoding='utf-8') as f:
+        f.write(xml)
+
+
 def read_xmls(folder=None, files=None, count=None):
     if not folder and not files:
         raise Exception("No files or folder given.")
@@ -80,8 +85,14 @@ def merge_xmls(folder=None, files=None, count=None, output="merged.xml", how="ho
         f.write(res)
 
 
-def merge_from_file(file, folder="random", output="merged.xml"):
-    positions = pd.read_fwf(file, header=None, astype=int).fillna(-1).astype(int)
+def merge_from_file(file=None, pos_list=None, folder="random", output="merged.xml", write_result=True):
+    if file:
+        positions = pd.read_fwf(file, header=None, astype=int).fillna(-1).astype(int)
+    elif pos_list:
+        positions = pd.DataFrame(pos_list).fillna(-1).astype(int)
+    else:
+        raise Exception("No file or position list given.")
+
     if len(positions) == 0:
         raise Exception("No positions given.")
     xmls = read_xmls(folder=folder)
@@ -109,5 +120,14 @@ def merge_from_file(file, folder="random", output="merged.xml"):
         positions[0][0] = res
         col_pos += 1
 
-    with open(output, "w", encoding='utf-8') as f:
-        f.write(positions[0][0])
+    if write_result:
+        write(positions[0][0], output)
+    return positions[0][0]
+
+
+if __name__ == "__main__":
+    pos_list = [
+        [1, 6, 2],
+        [4, -1, 5],
+    ]
+    merge_from_file(pos_list=pos_list)
