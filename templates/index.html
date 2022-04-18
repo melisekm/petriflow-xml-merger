@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -19,7 +18,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>PETRIFLOW XML MERGER</title>
-
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -27,15 +25,6 @@
     <div class="card mt-5">
         <div class="card-header">
             <h1 class="text-center">PETRIFLOW XML Parser</h1>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </nav>
         </div>
         <div class="card-body">
             <div class="row">
@@ -62,18 +51,16 @@
                                 <p>
                                     Enter -1 if there should be a space.
                                 </p>
-                                <div class="row">
-                                    <div class="row mb-2">
-                                        <label for="rows" class="fs-5 pt-0 col-1 ">Rows:</label>
-                                        <div class="col">
-                                            <input type="number" class="form-control w-auto" id="rows"
+                                <div>
+                                    <div class="hstack gap-3 mb-2">
+                                        <label for="rows" class="fs-5">Rows:</label>
+                                        <div class="smallField">
+                                            <input type="number" class="form-control text-center"  id="rows"
                                                    value=2>
                                         </div>
-                                    </div>
-                                    <div class="row mb-2">
-                                        <label for="cols" class="fs-5 pt-0 col-1 ">Cols:</label>
-                                        <div class="col-3">
-                                            <input type="number" class="form-control w-auto" id="cols"
+                                        <label for="cols" class="fs-5">Cols:</label>
+                                        <div class="smallField">
+                                            <input type="number" class="form-control text-center" id="cols"
                                                    value=2>
                                         </div>
                                     </div>
@@ -85,17 +72,16 @@
                                         <button id="edit" class="btn btn-secondary">
                                             EDIT MODE
 											<i class="fa-solid fa-pen-to-square"></i>
-                                            
+
                                         </button>
                                         <button id="swap" class="btn btn-secondary">
                                             SWAP MODE
                                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                                         </button>
-
                                     </div>
                                 </div>
 
-                                <table class="grabbable-parent grabbable">
+                                <table class="grabbable">
                                     <tbody>
                                     <tr>
                                         <td class="item">1</td>
@@ -114,7 +100,6 @@
                                     <span class="sr-only">Loading...</span>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
@@ -242,5 +227,4 @@
 
 
 </script>
-
 </html>

@@ -22,3 +22,7 @@ body {
     text-align: center;
     font-size: 44px;
 }
+
+.smallField{
+    max-width:50px;
+}
