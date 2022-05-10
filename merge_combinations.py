@@ -85,7 +85,7 @@ def merge_xmls(folder=None, files=None, count=None, output="merged.xml", how="ho
         f.write(res)
 
 
-def merge_from_file(file=None, pos_list=None, folder="random", xml_files=None, output="merged.xml", write_result=True):
+def merge_from_file(file=None, pos_list=None, folder="tests/test_xmls", xml_files=None, output="merged.xml", write_result=True):
     if file:
         positions = pd.read_fwf(file, header=None, astype=int).fillna(-1).astype(int)
     elif pos_list:

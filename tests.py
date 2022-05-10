@@ -39,6 +39,6 @@ if __name__ == '__main__':
     test_merge("tests/Proces_12.xml", "tests/Proces_3.xml", "tests/test12_3_vertically.xml", "vertically")
     test_merge("tests/Proces_12.xml", "tests/Proces_5.xml", "tests/test12_5_vertically.xml", "vertically")
     test_list_file_equality()
-    test_positions_from_file([[1, 6, 2], [4, 3, 5], ], "tests/test_positions_from_file.xml")
+    test_positions_from_file([[1, 6, 2], [4, 3, 5]], "tests/test_positions_from_file.xml")
 
     print("All tests passed")
