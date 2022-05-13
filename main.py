@@ -2,7 +2,7 @@ import argparse
 
 from merge_combinations import merge_xmls, merge_from_file
 
-all_help = "Tries to merge all xml files in [folder]. See docs for positioning. Oder is alphabetical."
+all_help = "Tries to merge all xml files in [folder]. See docs for positioning. Order is alphabetical."
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Merge Petriflow XML Petri nets.')
@@ -18,7 +18,7 @@ if __name__ == '__main__':
         parser.error('If you want to merge all files, you should not specify xmls explictly.')
 
     if args.positions:
-        merge_from_file('positions.txt', folder=args.folder, output=args.output)
+        merge_from_file(args.positions, folder=args.folder, output=args.output)
     else:
         if args.folder and args.xmls is None:
             merge_xmls(folder=args.folder, how=args.how, output=args.output, count=args.count)
