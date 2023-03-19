@@ -1,5 +1,4 @@
 # Merge Petriflow XML files
-showcase https://petriflow-xml-merger.herokuapp.com/
 
 ## Description
 
